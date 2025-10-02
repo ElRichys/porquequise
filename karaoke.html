@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reproductor Karaoke</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+      background: black;
+    }
+
+    .hearts span {
+      position:absolute;
+      color:#ff8fd6;
+      font-size:20px;
+      animation: floatUp 6s linear infinite;
+      opacity:0.8;
+    }
+    @keyframes floatUp {
+      0% {transform:translateY(100vh) scale(0.8); opacity:0;}
+      30% {opacity:1;}
+      100% {transform:translateY(-10vh) scale(1.2); opacity:0;}
+    }
+
+    /* Fondo estrellado animado */
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: black;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: blink 2s infinite alternate;
+    }
+    @keyframes blink {
+      from { opacity: 0.2; }
+      to { opacity: 1; }
+    }
+
+    .player {
+      margin-top: 50px;
+      background: rgba(20, 20, 30, 0.85);
+      display: inline-block;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+
+    audio {
+      width: 100%;
+      outline: none;
+    }
+
+    .btn{
+      display:inline-block;
+      background:linear-gradient(90deg,#ff6bcb,#a46bff);
+      color:#fff;
+      padding:12px 22px;
+      border-radius:30px;
+      font-size:1.1rem;
+      text-decoration:none;
+      font-weight:bold;
+      box-shadow:0 6px 20px rgba(200,100,250,0.4);
+      transition:transform 0.2s;
+      cursor:pointer;
+    }
+    .btn:hover{
+      transform:scale(1.05);
+    }
+
+    .lyrics {
+      margin-top: 30px;
+      padding: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+
+    .yo { color: #00aaff; }       /* Azul */
+    .ambos { color: #00ff66; }       /* Amarillo */
+    .tu { color: #ffcc00; }    /* Verde */
+
+    .legend {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    .legend span {
+      margin: 0 10px;
+      padding: 3px 8px;
+      border-radius: 5px;
+    }
+    .legend .yo { background: #00aaff; color: black; }
+    .legend .ambos { background: #00ff66; color: black; }
+    .legend .tu { background: #ffcc00; color: black; }
+  </style>
+</head>
+<body>
+  <!-- Fondo estrellado -->
+  <div class="stars" id="stars"></div>
+   <!-- Corazones flotantes -->
+  <div class="hearts"></div>
+
+  <div class="player">
+    <h1>🎵 Canción misteriosa...😼🙊</h1>
+    <audio controls>
+      <source src="Te amo y más karaoke.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+
+<div class="legend">
+    <span class="yo">Yo (azul)</span>
+    <span class="tu">Tú (amarillo)</span>
+    <span class="ambos">Ambos (verde)</span>
+  </div>
+
+  <div class="lyrics">
+    <h2>Letrita para que no te me pierdas:</h2>
+    <p><span class="yo">Te amo y más de lo que puedes imaginar
+</span></p>
+    <p><span class="tu">Te amo además como nunca nadie jamás lo hará
+</span></p>
+    <p><span class="yo">En esta canción, va mi corazón
+</span></p>
+    <p><span class="ambos">Amor más que amor es el nuestro y te lo vengo a dar
+</span></p>
+  <br> 
+  <p><span class="tu">Te miro y más y más y más te quiero mirar
+</span></p>
+    <p><span class="yo">Te amo y sabrás puro sentimiento y no hay nada más
+</span></p>
+    <p><span class="tu">Y sueño llegar a tu alma tocar
+</span></p>
+    <p><span class="ambos">Amor más que amor es el nuestro y te lo vengo a dar
+</span></p>
+<br>
+<p><span class="yo">Ruego a Dios tenerte a mi lado
+Y entonces poderte abrazar
+</span></p>
+    <p><span class="tu">Si no estás aquí algo falta
+</span></p>
+    <p><span class="ambos">Yo por ti pelearé hasta el final
+</span></p>
+<br>
+<p>¿Por qué todo esto?👀</p>
+<br>
+<p><span class="yo">Y sueño llegar <span class="tu">a tu alma tocar
+</span>
+</span></p>
+    <p><span class="ambos">Amor más que amor es el nuestro y te lo vengo a dar
+</span></p>
+<br>
+
+<p><span class="ambos">Te amo ¡Y más!...
+</span></p>
+<p><span class="ambos">...Te amo y sabrás que nadie como yo te amará
+</span></p>
+<p><span class="yo">En esta canción
+</span><span class="tu">yo veo quien soy
+</span></p>
+<p><span class="yo">Amor más que amor es mío y lo siento
+</span></p>
+<p><span class="tu">Amor más que amor es el tuyo y presiento
+</span></p>
+<p><span class="ambos">Amor más que amor será el nuestro...
+</span></p>
+<p><span class="ambos">...si tú me lo das 💗
+</span></p>
+</div>
+<br> 
+<section>
+    <a href="MaBelleEvangeline.html" target="_blank" class="btn">Hay una más...👀🌠</a>
+  </section>
+<br>
+<p>  </p>
+
+  <script>
+    // Generar estrellas aleatorias
+    const stars = document.getElementById("stars");
+    for (let i = 0; i < 150; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.animationDuration = (1 + Math.random() * 3) + "s";
+      stars.appendChild(star);
+    }
+
+    const heartsContainer = document.querySelector(".hearts");
+    setInterval(()=>{
+      const heart = document.createElement("span");
+      heart.textContent = "💖";
+      heart.style.left = Math.random()*100 + "vw";
+      heart.style.fontSize = (15+Math.random()*25) + "px";
+      heart.style.animationDuration = (4+Math.random()*4) + "s";
+      heartsContainer.appendChild(heart);
+      setTimeout(()=>heart.remove(),8000);
+    },800);
+  </script>
+</body>
+</html>
